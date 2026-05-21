@@ -16,7 +16,7 @@
         <header class="hero">
 
             <div class="profile-photo">
-                <img src="foto-perfil.jpg" alt="Foto de Gabriel Fanado">
+                <img src="assets/foto-perfil.jpg" alt="Foto de Gabriel Fanado">
             </div>
 
             <p class="welcome">
@@ -79,7 +79,7 @@
     <div class="about-content">
 
         <div class="about-image">
-            <img src="foto-perfil.jpg" alt="Foto de Gabriel Fanado">
+            <img src="assets/foto-perfil.jpg" alt="Foto de Gabriel Fanado">
         </div>
 
         <div class="about-info">
@@ -137,34 +137,140 @@
 
         <section id="projetos">
 
-            <h2>Projetos</h2>
+    <h2>Projetos</h2>
 
-            <div class="project-card">
+    <div class="projects-carousel">
+
+        <button class="carousel-btn prev" onclick="changeProject(-1)">
+            &#10094;
+        </button>
+
+        <div class="project-card active">
+
+            <div class="project-image">
+                <img src="assets/Energia.jpg" alt="Projeto Mercado Livre de Energia">
+            </div>
+
+            <div class="project-content">
 
                 <h3>Migração para o Mercado Livre de Energia</h3>
 
-                <p>
-                    Estudo de caso utilizando dados reais para simular a migração de uma
-                    instituição para o Ambiente de Contratação Livre.
+                <p class="project-skills">
+                    Excel • Análise de Dados • Energia • Regulação • Business Case • Python
                 </p>
+
+                <p>
+                    Estudo de caso utilizando dados reais da Universidade Federal do ABC para simular
+                    uma possível migração do mercado cativo para o mercado livre de energia.
+                </p>
+
+                <a href="projetos/mercado-livre.html" class="project-link">
+                    Ver detalhes
+                </a>
 
             </div>
 
-            <div class="project-card">
+        </div>
 
-                <h3>Análise de Dados e Automação</h3>
+        <div class="project-card">
+
+            <div class="project-image">
+                <img src="assets/Precos.jpg" alt="Projeto Reporte e Evolução de Preços">
+            </div>
+
+            <div class="project-content">
+
+                <h3>Reporte e Evolução de Preços</h3>
+
+                <p class="project-skills">
+                    Python • SQL • Power BI • Analytics • Market Intelligence
+                </p>
 
                 <p>
-                    Desenvolvimento de dashboards, automações e análises utilizando Python,
-                    SQL, AWS e Power Automate.
+                    Projeto baseado em dados públicos e/ou mockados para acompanhar a evolução de preços,
+                    identificar tendências e transformar dados em informações úteis para tomada de decisão.
                 </p>
+
+                <a href="#" class="project-link">
+                    Ver detalhes
+                </a>
 
             </div>
 
-        </section>
+        </div>
+
+        <div class="project-card">
+
+            <div class="project-image">
+                <img src="assets/PMO.jpg" alt="Projeto Controle de Atividades e PMO">
+            </div>
+
+            <div class="project-content">
+
+                <h3>Controle de Atividades e PMO</h3>
+
+                <p class="project-skills">
+                    Power Apps • Gestão de Processos • PMO • UX • Organização Operacional
+                </p>
+
+                <p>
+                    Aplicação para controle de atividades, dúvidas operacionais e acompanhamento de demandas
+                    em uma agenda corporativa específica, com foco em organização e eficiência.
+                </p>
+
+                <a href="#" class="project-link">
+                    Ver detalhes
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="project-card">
+
+            <div class="project-image">
+                <img src="assets/Indicadores.jpg" alt="Projeto Indicadores e Maiores Ofensores">
+            </div>
+
+            <div class="project-content">
+
+                <h3>Indicadores e Maiores Ofensores</h3>
+
+                <p class="project-skills">
+                    Excel • SQL • Analytics • Estratégia de Mercado
+                </p>
+
+                <p>
+                    Projeto que mensura os maiores indicadores junto aos maiores ofensores em excel
+                </p>
+
+                <a href="#" class="project-link">
+                    Ver detalhes
+                </a>
+
+            </div>
+
+        </div>
+
+        <button class="carousel-btn next" onclick="changeProject(1)">
+            &#10095;
+        </button>
 
     </div>
-<script src="script.js"></script>
-</body>
 
+    <div class="carousel-dots">
+        <span class="dot active" onclick="currentProject(0)"></span>
+        <span class="dot" onclick="currentProject(1)"></span>
+        <span class="dot" onclick="currentProject(2)"></span>
+        <span class="dot" onclick="currentProject(3)"></span>
+    </div>
+
+    
+
+</section>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
 </html>
