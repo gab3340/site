@@ -874,3 +874,202 @@ h2 {
 
     color: white;
 }
+/* RESPONSIVIDADE - CELULAR */
+
+@media (max-width: 768px) {
+
+    .container {
+        width: 100%;
+    }
+
+    .hero {
+        padding: 60px 20px;
+        min-height: 100vh;
+        box-sizing: border-box;
+    }
+
+    .profile-photo {
+        width: 130px;
+        height: 130px;
+    }
+
+    .welcome {
+        font-size: 12px;
+        letter-spacing: 2px;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+        line-height: 1.1;
+    }
+
+    .role {
+        font-size: 22px;
+    }
+
+    .subtitle {
+        font-size: 18px;
+    }
+
+    .contact-info {
+        gap: 10px;
+    }
+
+    .contact-info a,
+    .contact-info span {
+        font-size: 13px;
+        padding: 10px 14px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+    }
+
+    .btn {
+        width: 80%;
+        text-align: center;
+        padding: 14px 20px;
+    }
+
+    .section-divider {
+        width: 80%;
+        margin: 30px auto 60px auto;
+    }
+
+    .about-section,
+    #projetos {
+        width: 90%;
+    }
+
+    .section-title h2 {
+        font-size: 38px;
+    }
+
+    .section-title p {
+        font-size: 16px;
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .about-image img {
+        height: 360px;
+    }
+
+    .about-info p {
+        font-size: 16px;
+        line-height: 1.7;
+    }
+
+    .about-cards {
+        grid-template-columns: 1fr;
+    }
+
+    #projetos h2 {
+        font-size: 38px;
+        text-align: center;
+    }
+
+    .projects-carousel {
+        margin-top: 25px;
+    }
+
+    .projects-carousel .project-card {
+        width: 100%;
+    }
+
+    .project-image {
+        height: 210px;
+    }
+
+    .project-content {
+        padding: 22px;
+        text-align: center;
+    }
+
+    .project-content h3 {
+        font-size: 24px;
+    }
+
+    .project-content p {
+        font-size: 15px;
+    }
+
+    .carousel-btn {
+        width: 42px;
+        height: 42px;
+        font-size: 24px;
+    }
+
+    .carousel-btn.prev {
+        left: -10px;
+    }
+
+    .carousel-btn.next {
+        right: -10px;
+    }
+
+    .carousel-dots {
+        margin-top: 22px;
+    }
+
+    .project-page {
+        width: 90%;
+        padding-top: 35px;
+    }
+
+    .project-page h1 {
+        font-size: 38px;
+        line-height: 1.1;
+    }
+
+    .project-subtitle {
+        font-size: 18px;
+    }
+
+    .project-banner {
+        max-height: 280px;
+    }
+
+    .project-section h2 {
+        font-size: 32px;
+    }
+
+    .project-page p {
+        font-size: 16px;
+    }
+
+    .skills-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .methodology-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .full-card {
+        grid-column: span 1;
+    }
+
+    .results-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .summary-table {
+        overflow-x: auto;
+    }
+
+    .summary-table table {
+        min-width: 650px;
+    }
+
+    .project-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+
+}
