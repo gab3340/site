@@ -16,7 +16,7 @@
         <header class="hero">
 
             <div class="profile-photo">
-                <img src="foto_perfil.jpg" alt="Foto de Gabriel Fanado">
+                <img src="assets/foto_perfil.jpg" alt="Foto de Gabriel Fanado">
             </div>
 
             <p class="welcome">
@@ -79,20 +79,20 @@
     <div class="about-content">
 
         <div class="about-image">
-            <img src="foto-perfil.jpg" alt="Foto de Gabriel Fanado">
+            <img src="assets/foto-perfil.jpg" alt="Foto de Gabriel Fanado">
         </div>
 
         <div class="about-info">
 
             <p>
-                Olá! Me chamo <strong>Gabriel Fanado Manfredini</strong>, tenho 21 anos e sou estudante de
+                Olá! Me chamo <strong>Gabriel Fanado Manfredini</strong>, tenho 22 anos e sou estudante de
                 Bacharelado em Ciência e Tecnologia (BC&T) e Engenharia da Informação na UFABC.
             </p>
 
             <p>
-                Atualmente atuo no Itaú Unibanco como estagiário em Projetos e Operações de Chargeback,
-                desenvolvendo soluções orientadas a dados, modelagem de informações operacionais
-                e iniciativas voltadas para otimização de processos e tomada de decisão.
+                Atualmente atuo na Comerc Energia como estagiário de Dados e Automação em Trading,
+                desenvolvendo soluções em Python, Power BI, Power Apps e Power Automate para
+                digitalizar processos e apoiar decisões no mercado de energia.
             </p>
        
             <p>
@@ -148,7 +148,7 @@
         <div class="project-card active">
 
             <div class="project-image">
-                <img src="Energia.jpg" alt="Projeto Mercado Livre de Energia">
+                <img src="assets/Energia.jpg" alt="Projeto Mercado Livre de Energia">
             </div>
 
             <div class="project-content">
@@ -164,7 +164,7 @@
                     uma possível migração do mercado cativo para o mercado livre de energia.
                 </p>
 
-                <a href="mercado-livre.html" class="project-link">
+                <a href="projetos/mercado-livre.html" class="project-link">
                     Ver detalhes
                 </a>
 
@@ -175,7 +175,7 @@
         <div class="project-card">
 
             <div class="project-image">
-                <img src="Precos.jpg" alt="Projeto Reporte e Evolução de Preços">
+                <img src="assets/Precos.jpg" alt="Projeto Reporte e Evolução de Preços">
             </div>
 
             <div class="project-content">
@@ -202,7 +202,7 @@
         <div class="project-card">
 
             <div class="project-image">
-                <img src="PMO.jpg" alt="Projeto Controle de Atividades e PMO">
+                <img src="assets/PMO.jpg" alt="Projeto Controle de Atividades e PMO">
             </div>
 
             <div class="project-content">
@@ -229,7 +229,7 @@
         <div class="project-card">
 
             <div class="project-image">
-                <img src="Indicadores.jpg" alt="Projeto Indicadores e Maiores Ofensores">
+                <img src="assets/Indicadores.jpg" alt="Projeto Indicadores e Maiores Ofensores">
             </div>
 
             <div class="project-content">
@@ -250,7 +250,7 @@
 
             </div>
 
-        </div>
+        </div>   
 
         <button class="carousel-btn next" onclick="changeProject(1)">
             &#10095;
@@ -267,6 +267,8 @@
 
     <div class="section-divider"></div>
 
+    </section>
+
     <section id="curriculo" class="cv-section">
 
     <div class="section-title">
@@ -274,26 +276,40 @@
         <p>Formação acadêmica, experiências profissionais e tecnologias</p>
     </div>
 
+    <div class="company-list"><details class="company-accordion">
+      <summary><span class="company-brand brand-comerc" aria-hidden="true"><img src="assets/comerc.png" alt="" width="88" height="52"></span><span class="company-heading"><span class="company-name">Comerc Energia</span><span class="experience-role">Estagiário de Dados e Automação em Trading</span></span><span class="experience-date">2026 — Atual</span><span class="accordion-chevron" aria-hidden="true">⌄</span></summary>
+      <div class="company-body"><h3>Resumo da experiência</h3><p>Atuação no time de trading e comercial, desenvolvendo soluções de dados e automação para apoiar a gestão de portfólios e digitalizar processos do mercado de energia.</p>
+      <h3>Principais projetos e entregas</h3><ul class="company-projects"><li><strong>Curto prazo</strong><p>Automação do processo comercial de curto prazo com IA e Power Automate.</p></li><li><strong>MTM de portfólios</strong><p>Criação de bases, rotinas em Python e dashboards em Power BI para acompanhamento diário do MTM de atacado e varejo.</p></li><li><strong>Controle de garantias</strong><p>Estruturação da base, rotina de atualização e visualização para acompanhamento de garantias.</p></li><li><strong>Digitalização do I-REC</strong><p>Reengenharia do processo, aplicativo em Power Apps para propostas e boletagem, automação do book com Python e Power Automate e integração com planilhas da Evident.</p></li><li><strong>Calculadora de MTM</strong><p>Desenvolvimento de uma calculadora web em HTML, CSS e JavaScript para análise de dados contratuais de potenciais clientes.</p></li></ul>
+      <h3>Habilidades desenvolvidas</h3><div class="skill-tags"><span>Mapeamento de processos</span><span>Modelagem de dados</span><span>Validação de resultados</span><span>Gestão de portfólios de energia</span><span>Manutenção e governança</span></div>
+      <h3>Tecnologias utilizadas</h3><div class="skill-tags"><span>Python</span><span>Power BI</span><span>DAX</span><span>Power Apps</span><span>Power Automate</span><span>IA generativa</span><span>HTML / CSS / JavaScript</span></div></div></details><details class="company-accordion">
+      <summary><span class="company-brand brand-itau" aria-hidden="true"><img src="assets/itau_logo.jpg" alt="" width="88" height="52"></span><span class="company-heading"><span class="company-name">Itaú Unibanco</span><span class="experience-role">Estagiário em Projetos e Operações de Chargeback</span></span><span class="experience-date">2025 — 2026</span><span class="accordion-chevron" aria-hidden="true">⌄</span></summary>
+      <div class="company-body"><h3>Resumo da experiência</h3><p>Atuação em projetos e operações de chargeback, utilizando dados e tecnologia para acompanhar indicadores, organizar demandas e melhorar processos operacionais.</p>
+      <h3>Principais projetos e entregas</h3><ul class="company-projects"><li><strong>Dados e indicadores</strong><p>Consultas e tratamento de dados com SQL, Python e AWS Athena, S3 e Glue para análises e reportes operacionais.</p></li><li><strong>Gestão de demandas</strong><p>Desenvolvimento de aplicações em Power Apps para apoiar a organização e o acompanhamento de atividades.</p></li><li><strong>Reports operacionais</strong><p>Criação de dashboards em Excel e acompanhamento de indicadores ligados a chargeback, fraude, desacordo comercial e demandas relacionadas ao Bacen.</p></li><li><strong>Melhoria de processos</strong><p>Participação em iniciativas de digitalização, automação e uso de IA generativa nas operações.</p></li></ul>
+      <h3>Habilidades desenvolvidas</h3><div class="skill-tags"><span>Análise de dados operacionais</span><span>Comunicação de resultados</span><span>Acompanhamento de indicadores</span><span>Melhoria contínua</span><span>Organização de demandas</span></div>
+      <h3>Tecnologias utilizadas</h3><div class="skill-tags"><span>Python</span><span>SQL</span><span>AWS Athena / S3 / Glue</span><span>Power Apps</span><span>Excel</span><span>Salesforce</span><span>IA generativa</span></div></div></details><details class="company-accordion">
+      <summary><span class="company-brand brand-eneva" aria-hidden="true"><img src="assets/eneva.png" alt="" width="88" height="52"></span><span class="company-heading"><span class="company-name">Eneva</span><span class="experience-role">Estagiário — Comercial, Novos Negócios e Portfólio</span></span><span class="experience-date">2024 — 2025</span><span class="accordion-chevron" aria-hidden="true">⌄</span></summary>
+      <div class="company-body"><h3>Resumo da experiência</h3><p>Apoio às atividades comerciais e a estudos do mercado de energia, conectando análise de dados, propostas comerciais e desenvolvimento de novos negócios.</p>
+      <h3>Principais projetos e entregas</h3><ul class="company-projects"><li><strong>Propostas comerciais</strong><p>Apoio ao envio de propostas de curto e longo prazo e de energia varejista, além de suporte às rotinas comerciais e de gestão.</p></li><li><strong>Mercado cativo e livre</strong><p>Estudos de clientes no mercado cativo para avaliação de oportunidades de migração ao mercado livre de energia.</p></li><li><strong>Geração Distribuída</strong><p>Prospecção de parceiros estratégicos e apoio à estruturação de bases, processos e produto de GD.</p></li><li><strong>Portfólio e reports</strong><p>Apoio às bases de MTM de atacado e varejo e à elaboração de reportes de fechamento, preços e contratos.</p></li><li><strong>Novos negócios</strong><p>Análise e organização de informações para eletromobilidade e apoio às áreas de Comercial, Back Office e Novos Negócios.</p></li></ul>
+      <h3>Habilidades desenvolvidas</h3><div class="skill-tags"><span>Mercado livre de energia</span><span>Análise comercial</span><span>Prospecção de parceiros</span><span>Estudos de viabilidade</span><span>Inteligência de mercado</span></div>
+      <h3>Tecnologias utilizadas</h3><div class="skill-tags"><span>Excel</span><span>Power BI</span><span>Análise de dados</span><span>Reports comerciais</span></div></div></details></div>
+
     <div class="cv-card">
 
         <h3>Conheça minha trajetória profissional</h3>
 
         <div class="cv-actions">
 
-            <a href="curriculo.html" class="btn primary">
+            <a href="projetos/curriculo.html" class="btn primary">
                 Ver currículo completo
             </a>
 
-            <a href="CV-Gabriel-Fanado.pdf" download class="btn secondary">
+            <a href="assets/CV-Gabriel-Fanado.pdf" download class="btn secondary">
                 Baixar CV
             </a>
 
         </div>
 
     </div>
-
-</section>
-    
 
 </section>
     </div>
