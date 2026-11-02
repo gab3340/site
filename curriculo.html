@@ -6,9 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Currículo | Gabriel Fanado</title>
     <link rel="stylesheet" href="../style.css">
+<style>
+.language-switch { position: fixed; top: 18px; right: 18px; z-index: 1000; display: flex; gap: 8px; padding: 7px; border-radius: 999px; background: rgba(2,6,23,.94); border: 1px solid #334155; }
+.language-switch button { width: 44px; height: 44px; border-radius: 50%; border: 1px solid #64748b; background: #0f172a; color: #e2e8f0; font: 700 13px Arial, sans-serif; cursor: pointer; }
+.language-switch button[aria-pressed="true"] { background: #22d3ee; border-color: #22d3ee; color: #020617; }
+.language-switch button:hover { border-color: #22d3ee; }
+.language-switch button:focus-visible { outline: 3px solid #f0abfc; outline-offset: 3px; }
+@media (max-width: 768px) { .language-switch { top: 10px; right: 10px; } }
+
+.project-page { padding-top: 88px; }
+
+</style>
 </head>
 
 <body>
+<nav class="language-switch" aria-label="Idioma / Language">
+<button type="button" data-language="pt-BR" lang="pt-BR" aria-label="Português do Brasil" aria-pressed="true">BR</button>
+<button type="button" data-language="en" lang="en" aria-label="English" aria-pressed="false">EN</button>
+</nav>
 
     <div class="project-page">
 
@@ -140,6 +155,237 @@
 
     </div>
 
+<script>
+(() => {
+    const translations = {
+  "Gabriel Fanado ": " Portfólio|Gabriel Fanado | Portfolio",
+  "Bem-vindo ao meu portfólio": "Welcome to my portfolio",
+  "Estudante de Engenharia da Informação": "Information Engineering Student",
+  "São Paulo, Brasil": "São Paulo, Brazil",
+  "Ver Projetos": "View Projects",
+  "Entre em Contato": "Get in Touch",
+  "Sobre mim": "About Me",
+  "Conheça um pouco mais sobre minha trajetória e interesses": "Learn more about my background and interests",
+  "Olá! Me chamo": "Hello! My name is",
+  ", tenho 22 anos e sou estudante de Bacharelado em Ciência e Tecnologia (BC&T) e Engenharia da Informação na UFABC.": ", I am 22 years old and studying for a Bachelor’s degree in Science and Technology and a degree in Information Engineering at UFABC.",
+  "Atualmente atuo na Comerc Energia como estagiário de Dados e Automação em Trading, desenvolvendo soluções em Python, Power BI, Power Apps e Power Automate para digitalizar processos e apoiar decisões no mercado de energia.": "I currently work at Comerc Energia as a Data and Automation Intern in Trading, developing solutions with Python, Power BI, Power Apps and Power Automate to digitize processes and support decisions in the energy market.",
+  "Tenho grande interesse em Machine Learning, engenharia de prompts e no uso de dados para transformar informações complexas em insights estratégicos e soluções voltadas à tomada de decisão. Acredito no aprendizado contínuo como uma das principais ferramentas de crescimento, buscando estar sempre preparado para aprender novas tecnologias, desenvolver habilidades e evoluir profissionalmente.": "I am interested in machine learning, prompt engineering and using data to turn complex information into strategic insights and practical decision-making tools. I see continuous learning as essential to growth and actively seek to learn new technologies, develop skills and advance professionally.",
+  "Dados": "Data",
+  "Analytics e insights": "Analytics and insights",
+  "Automação": "Automation",
+  "Eficiência operacional": "Operational efficiency",
+  "Negócios": "Business",
+  "Valor e estratégia": "Value and strategy",
+  "Tecnologia": "Technology",
+  "Soluções escaláveis": "Scalable solutions",
+  "Projetos": "Projects",
+  "Migração para o Mercado Livre de Energia": "Transition to Brazil’s Free Energy Market",
+  "Excel • Análise de Dados • Energia • Regulação • Business Case": "Excel • Data Analysis • Energy • Regulation • Business Case",
+  "Estudo de caso utilizando dados reais da Universidade Federal do ABC para simular uma possível migração do mercado cativo para o mercado livre de energia.": "Case study using real data from the Federal University of ABC to simulate a potential transition from the regulated to the free energy market.",
+  "Ver detalhes": "View details",
+  "Reporte e Evolução de Preços": "Price Reporting and Trends",
+  "Projeto baseado em dados públicos e/ou mockados para acompanhar a evolução de preços, identificar tendências e transformar dados em informações úteis para tomada de decisão.": "A project using public and/or simulated data to track price movements, identify trends and turn data into useful information for decision-making.",
+  "Controle de Atividades e PMO": "Task Tracking and PMO",
+  "Power Apps • Gestão de Processos • PMO • UX • Organização Operacional": "Power Apps • Process Management • PMO • UX • Operational Organization",
+  "Aplicação para controle de atividades, dúvidas operacionais e acompanhamento de demandas em uma agenda corporativa específica, com foco em organização e eficiência.": "An application for tracking tasks, operational questions and requests within a corporate workflow, focusing on organization and efficiency.",
+  "Indicadores e Maiores Ofensores": "Key Metrics and Main Issue Drivers",
+  "Excel • SQL • Analytics • Estratégia de Mercado": "Excel • SQL • Analytics • Market Strategy",
+  "Projeto que mensura os maiores indicadores junto aos maiores ofensores em excel": "An Excel project tracking key metrics and identifying the main drivers of operational issues.",
+  "Museu Vivo — Arte e Biologia": "Museu Vivo — Art and Biology",
+  "HTML • CSS • JavaScript • Three.js • Educação interativa": "HTML • CSS • JavaScript • Three.js • Interactive Learning",
+  "Jogo educativo em um museu virtual 3D, desenvolvido para uma disciplina de Biologia da UFABC. Explore salas temáticas e descubra como a representação do corpo humano se transforma ao longo da história da arte, em uma experiência que conecta arte, ciência e aprendizagem. Disponível para computador e celular.": "An educational game set in a virtual 3D museum, developed for a Biology course at UFABC. Explore themed rooms and discover how representations of the human body have changed throughout art history, in an experience connecting art, science and learning. Available on desktop and mobile.",
+  "Jogar ↗": "Play ↗",
+  "Currículo & Experiência": "Resume & Experience",
+  "Formação acadêmica, experiências profissionais e tecnologias": "Education, professional experience and technologies",
+  "Estagiário de Dados e Automação em Trading": "Data and Automation Intern — Trading",
+  "2026 — Atual": "2026 — Present",
+  "Resumo da experiência": "Experience overview",
+  "Atuação no time de trading e comercial, desenvolvendo soluções de dados e automação para apoiar a gestão de portfólios e digitalizar processos do mercado de energia.": "Working with the trading and commercial team, developing data and automation solutions to support portfolio management and digitize energy market processes.",
+  "Principais projetos e entregas": "Key projects and contributions",
+  "Curto prazo": "Short-term trading",
+  "Automação do processo comercial de curto prazo com IA e Power Automate.": "Automation of the short-term commercial process using AI and Power Automate.",
+  "MTM de portfólios": "Portfolio mark-to-market",
+  "Criação de bases, rotinas em Python e dashboards em Power BI para acompanhamento diário do MTM de atacado e varejo.": "Creation of datasets, Python routines and Power BI dashboards for daily mark-to-market monitoring of wholesale and retail portfolios.",
+  "Controle de garantias": "Guarantee tracking",
+  "Estruturação da base, rotina de atualização e visualização para acompanhamento de garantias.": "Development of the dataset, update routine and reporting views for tracking guarantees.",
+  "Digitalização do I-REC": "I-REC process digitization",
+  "Reengenharia do processo, aplicativo em Power Apps para propostas e boletagem, automação do book com Python e Power Automate e integração com planilhas da Evident.": "Process redesign, a Power Apps application for proposals and trade booking, book automation with Python and Power Automate, and integration with Evident spreadsheets.",
+  "Calculadora de MTM": "Mark-to-market calculator",
+  "Desenvolvimento de uma calculadora web em HTML, CSS e JavaScript para análise de dados contratuais de potenciais clientes.": "Development of a web calculator using HTML, CSS and JavaScript to analyze prospective clients’ contract data.",
+  "Habilidades desenvolvidas": "Skills developed",
+  "Mapeamento de processos": "Process mapping",
+  "Modelagem de dados": "Data modeling",
+  "Validação de resultados": "Results validation",
+  "Gestão de portfólios de energia": "Energy portfolio management",
+  "Manutenção e governança": "Maintenance and governance",
+  "Tecnologias utilizadas": "Technologies used",
+  "IA generativa": "Generative AI",
+  "Estagiário em Projetos e Operações de Chargeback": "Chargeback Projects and Operations Intern",
+  "Atuação em projetos e operações de chargeback, utilizando dados e tecnologia para acompanhar indicadores, organizar demandas e melhorar processos operacionais.": "Working on chargeback projects and operations, using data and technology to monitor metrics, organize requests and improve operational processes.",
+  "Dados e indicadores": "Data and metrics",
+  "Consultas e tratamento de dados com SQL, Python e AWS Athena, S3 e Glue para análises e reportes operacionais.": "Data querying and processing with SQL, Python and AWS Athena, S3 and Glue for operational analysis and reporting.",
+  "Gestão de demandas": "Request management",
+  "Desenvolvimento de aplicações em Power Apps para apoiar a organização e o acompanhamento de atividades.": "Development of Power Apps applications to help organize and track activities.",
+  "Reports operacionais": "Operational reporting",
+  "Criação de dashboards em Excel e acompanhamento de indicadores ligados a chargeback, fraude, desacordo comercial e demandas relacionadas ao Bacen.": "Creation of Excel dashboards and monitoring of metrics related to chargebacks, fraud, transaction disputes and requests involving Brazil’s Central Bank.",
+  "Melhoria de processos": "Process improvement",
+  "Participação em iniciativas de digitalização, automação e uso de IA generativa nas operações.": "Participation in digitization, automation and generative AI initiatives within operations.",
+  "Análise de dados operacionais": "Operational data analysis",
+  "Comunicação de resultados": "Communicating results",
+  "Acompanhamento de indicadores": "Metrics monitoring",
+  "Melhoria contínua": "Continuous improvement",
+  "Organização de demandas": "Request organization",
+  "Estagiário — Comercial, Novos Negócios e Portfólio": "Commercial, New Business and Portfolio Intern",
+  "Apoio às atividades comerciais e a estudos do mercado de energia, conectando análise de dados, propostas comerciais e desenvolvimento de novos negócios.": "Supporting commercial activities and energy market studies, connecting data analysis, commercial proposals and new business development.",
+  "Propostas comerciais": "Commercial proposals",
+  "Apoio ao envio de propostas de curto e longo prazo e de energia varejista, além de suporte às rotinas comerciais e de gestão.": "Support for short-term, long-term and retail energy proposals, alongside commercial and management activities.",
+  "Mercado cativo e livre": "Regulated and free energy markets",
+  "Estudos de clientes no mercado cativo para avaliação de oportunidades de migração ao mercado livre de energia.": "Analysis of clients in the regulated market to assess opportunities to transition to the free energy market.",
+  "Geração Distribuída": "Distributed generation",
+  "Prospecção de parceiros estratégicos e apoio à estruturação de bases, processos e produto de GD.": "Prospecting strategic partners and helping structure datasets, processes and the distributed generation offering.",
+  "Portfólio e reports": "Portfolio and reporting",
+  "Apoio às bases de MTM de atacado e varejo e à elaboração de reportes de fechamento, preços e contratos.": "Support for wholesale and retail mark-to-market datasets and the preparation of closing, pricing and contract reports.",
+  "Novos negócios": "New business",
+  "Análise e organização de informações para eletromobilidade e apoio às áreas de Comercial, Back Office e Novos Negócios.": "Analysis and organization of information for electric mobility and support for Commercial, Back Office and New Business teams.",
+  "Mercado livre de energia": "Free energy market",
+  "Análise comercial": "Commercial analysis",
+  "Prospecção de parceiros": "Partner prospecting",
+  "Estudos de viabilidade": "Feasibility studies",
+  "Inteligência de mercado": "Market intelligence",
+  "Análise de dados": "Data analysis",
+  "Reports comerciais": "Commercial reporting",
+  "Conheça minha trajetória profissional": "Explore my professional background",
+  "Ver currículo completo": "View full resume",
+  "Baixar CV": "Download resume",
+  "Foto de Gabriel Fanado": "Photo of Gabriel Fanado",
+  "Projeto Mercado Livre de Energia": "Free Energy Market project",
+  "Projeto Reporte e Evolução de Preços": "Price Reporting and Trends project",
+  "Projeto Controle de Atividades e PMO": "Task Tracking and PMO project",
+  "Projeto Indicadores e Maiores Ofensores": "Key Metrics and Main Issue Drivers project",
+  "Sala do Museu Vivo com obras de arte e cenários tridimensionais": "Museu Vivo gallery with artwork and three-dimensional exhibits",
+  "Dados | Informação | Automação | Projetos": "Data | Information | Automation | Projects",
+  "Gabriel Fanado | Portfólio": "Gabriel Fanado | Portfolio",
+  "Currículo | Gabriel Fanado|Resume ": " Gabriel Fanado",
+  "← Voltar": "← Back",
+  "Experiência profissional, formação acadêmica e tecnologias": "Professional experience, education and technologies",
+  "📄 Visualizar CV": "📄 View resume (Portuguese)",
+  "⬇️ Baixar CV": "⬇️ Download resume (Portuguese)",
+  "Resumo profissional": "Professional summary",
+  "Estudante de Engenharia da Informação com experiência em análise de dados, operações e melhoria contínua, atuando nos setores bancário e de energia.": "Information Engineering student with experience in data analysis, operations and continuous improvement in the banking and energy sectors.",
+  "Possuo experiência no desenvolvimento de dashboards, automações, modelagem de dados e análises estratégicas para suporte à tomada de decisão, acompanhamento de indicadores e otimização de processos.": "I have experience developing dashboards, automations, data models and strategic analyses to support decision-making, monitor metrics and optimize processes.",
+  "Tenho conhecimento em Python, SQL, Power BI, AWS e ferramentas de automação, participando de projetos relacionados a analytics, eficiência operacional, inteligência de mercado e tecnologia aplicada a negócios.": "I work with Python, SQL, Power BI, AWS and automation tools on projects involving analytics, operational efficiency, market intelligence and business technology.",
+  "Meu principal interesse está na utilização de dados e tecnologia para transformar informações complexas em soluções escaláveis, insights estratégicos e melhorias orientadas a performance e inovação.": "My main interest is using data and technology to turn complex information into scalable solutions, strategic insights and improvements driven by performance and innovation.",
+  "Experiência profissional": "Professional experience",
+  "Formação acadêmica": "Education",
+  "Universidade pública federal": "Federal public university",
+  "Universidade Federal do ABC": "Federal University of ABC",
+  "Formação interdisciplinar em ciência, tecnologia e engenharia.": "Interdisciplinary education in science, technology and engineering.",
+  "Bacharelado em Ciências e Tecnologia": "Bachelor’s Degree in Science and Technology",
+  "Previsão de conclusão": "Expected graduation",
+  "Engenharia da Informação": "Information Engineering",
+  "Pesquisa e projetos acadêmicos": "Research and academic projects",
+  "Área de Pesquisa · 6 meses em 2024": "Research team · 6 months in 2024",
+  "Participação na equipe universitária de desenvolvimento de foguetes, na área de Pesquisa.": "Member of the research team within the university’s rocket development group.",
+  "Pesquisa sobre o mercado de energia": "Energy market research",
+  "Projeto de pesquisa sobre a transição do mercado cativo para o mercado livre de energia, utilizando a UFABC como estudo de caso.": "Research project on the transition from the regulated to the free energy market, using UFABC as a case study.",
+  "Skills & Competências": "Skills & Competencies",
+  "Programação e dados": "Programming and data",
+  "Cloud e infraestrutura de dados": "Cloud and data infrastructure",
+  "Automação e aplicações": "Automation and applications",
+  "Engenharia de prompts": "Prompt engineering",
+  "BI e ferramentas de negócios": "BI and business tools",
+  "Processos e análise de negócios": "Processes and business analysis",
+  "Engenharia de processos": "Process engineering",
+  "Mercado de energia": "Energy market",
+  "Competências profissionais": "Professional competencies",
+  "Pensamento analítico": "Analytical thinking",
+  "Pensamento estratégico": "Strategic thinking",
+  "Inovação": "Innovation",
+  "Resolução de problemas": "Problem-solving",
+  "Aprendizado contínuo": "Continuous learning",
+  "Experiências Complementares": "Additional experience",
+  "Intercâmbios para a Alemanha": "Exchange experiences in Germany",
+  "Alemanha • Vivência cultural e desenvolvimento pessoal": "Germany • Cultural experience and personal development",
+  "Vivências na Alemanha voltadas ao contato com outra cultura, à prática de idiomas e ao desenvolvimento de autonomia e adaptabilidade.": "Experiences in Germany focused on cultural immersion, language practice and developing independence and adaptability.",
+  "Projeto Ninho da Paz": "Ninho da Paz Project",
+  "Apoio operacional e comunicação": "Operations and communication support",
+  "Participação em atividades de comunicação com doadores, organização de estoque e suporte às operações da instituição.": "Participation in donor communications, inventory organization and support for the institution’s operations.",
+  "Logo da UFABC": "UFABC logo",
+  "Mercado Livre de Energia | Gabriel Fanado|Free Energy Market ": " Gabriel Fanado",
+  "Um estudo de caso utilizando a Universidade Federal do ABC (UFABC)": "A case study of the Federal University of ABC (UFABC)",
+  "Sobre o projeto": "About the project",
+  "Desenvolvi, dentro da disciplina de Projeto Dirigido, um estudo de caso analisando a viabilidade econômica da migração da Universidade Federal do ABC (UFABC) do mercado regulado de energia (ACR) para o mercado livre (ACL).": "As part of the Directed Project course, I developed a case study analyzing the economic feasibility of transitioning the Federal University of ABC (UFABC) from Brazil’s regulated energy market (ACR) to its free energy market (ACL).",
+  "O projeto teve como objetivo explorar impactos financeiros, regulatórios e estratégicos da abertura do mercado de energia, utilizando dados reais de consumo da instituição para construir cenários e projeções de médio e longo prazo.": "The project explored the financial, regulatory and strategic impacts of energy market liberalization, using the institution’s actual consumption data to build medium- and long-term scenarios and projections.",
+  "O estudo considerou tarifas, encargos, projeções de consumo, cenários regulatórios e simulações financeiras entre 2026 e 2030, identificando potenciais economias superiores a 30% em cenários conservadores.": "The study considered tariffs, charges, consumption forecasts, regulatory scenarios and financial simulations for 2026–2030, identifying potential savings above 30% under conservative scenarios.",
+  "Técnicas": "Technical skills",
+  "Metodologia": "Methodology",
+  "O desenvolvimento do estudo foi estruturado em etapas para analisar a viabilidade econômica da migração da UFABC do Ambiente de Contratação Regulada (ACR) para o Ambiente de Contratação Livre (ACL).": "The study was structured in stages to analyze the economic feasibility of UFABC’s transition from the regulated contracting environment (ACR) to the free contracting environment (ACL).",
+  "A análise utilizou dados reais de consumo energético dos campi de Santo André e São Bernardo do Campo, combinando projeções financeiras, análise regulatória e simulações de cenários entre 2026 e 2030.": "The analysis used actual energy consumption data from the Santo André and São Bernardo do Campo campuses, combining financial projections, regulatory analysis and scenario simulations for 2026–2030.",
+  "Coleta e Estruturação dos Dados": "Data collection and structuring",
+  "Organização e estruturação de dados reais de consumo energético e faturamento da UFABC, separando encargos, tributos, tarifas de distribuição, consumo em ponta e fora de ponta e demais componentes tarifários.": "Organization and structuring of UFABC’s actual energy consumption and billing data, separating charges, taxes, distribution tariffs, peak and off-peak consumption and other tariff components.",
+  "Os dados foram tratados e organizados em planilhas analíticas para permitir simulações comparativas entre o Ambiente de Contratação Regulada (ACR) e o Ambiente de Contratação Livre (ACL).": "The data was processed and organized in analytical spreadsheets to enable comparative simulations between the regulated (ACR) and free (ACL) contracting environments.",
+  "Modelagem Financeira e Simulação": "Financial modeling and simulation",
+  "Desenvolvimento de um modelo financeiro comparativo considerando tarifas energéticas, encargos setoriais, tributos, energia incentivada e projeções tarifárias.": "Development of a comparative financial model considering energy tariffs, sector charges, taxes, incentivized energy and tariff projections.",
+  "As simulações foram realizadas entre 2026 e 2030, utilizando um cenário conservador com bandeira verde, preços reduzidos no ACL e estabilidade regulatória.": "Simulations covered 2026–2030 using a conservative scenario with Brazil’s green tariff flag, lower ACL prices and regulatory stability.",
+  "Análise Estratégica e Consolidação dos Resultados": "Strategic analysis and consolidation of results",
+  "Além da análise financeira, o estudo avaliou impactos estratégicos relacionados à previsibilidade orçamentária, liberdade contratual, competitividade do setor e abertura do mercado livre prevista para 2030.": "In addition to the financial analysis, the study assessed strategic impacts related to budget predictability, contractual freedom, sector competitiveness and the free market opening anticipated for 2030 in the study.",
+  "Os resultados demonstraram potenciais economias superiores a 30% em cenários conservadores, reforçando a viabilidade econômica e estratégica da migração para o Ambiente de Contratação Livre.": "The results showed potential savings above 30% under conservative scenarios, supporting the economic and strategic feasibility of transitioning to the free contracting environment.",
+  "Resultados": "Results",
+  "Maior economia projetada em 2030": "Highest projected savings in 2030",
+  "2 campi": "2 campuses",
+  "Santo André e São Bernardo do Campo analisados": "Santo André and São Bernardo do Campo analyzed",
+  "Horizonte de simulação financeira": "Financial simulation period",
+  "R$ 1,44 mi": "BRL 1.44 million",
+  "Economia anual projetada para 2030": "Projected annual savings for 2030",
+  "📄 Ler estudo completo": "📄 Read full study (Portuguese)",
+  "⬇️ Baixar PDF": "⬇️ Download PDF (Portuguese)",
+  "Currículo | Gabriel Fanado": "Resume | Gabriel Fanado",
+  "Mercado Livre de Energia | Gabriel Fanado": "Free Energy Market | Gabriel Fanado"
+};
+    const normalize = (text) => text.replace(/\s+/g, " ").trim();
+    const params = new URLSearchParams(window.location.search);
+    let saved;
+    try { saved = localStorage.getItem("portfolio-language"); } catch (_) {}
+    const requested = params.get("lang");
+    const language = requested === "en" || requested === "pt-BR"
+        ? requested : saved === "en" ? "en" : "pt-BR";
+    document.documentElement.lang = language;
+    try { localStorage.setItem("portfolio-language", language); } catch (_) {}
+    document.querySelectorAll('a[href]').forEach((link) => {
+        const url = new URL(link.getAttribute('href'), window.location.href);
+        if (url.origin === window.location.origin && /\.html$/.test(url.pathname) && !link.hasAttribute('download')) {
+            url.searchParams.set('lang', language);
+            link.href = url.href;
+        }
+    });
+    if (language === "en") {
+        const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+        const nodes = [];
+        while (walker.nextNode()) nodes.push(walker.currentNode);
+        nodes.forEach((node) => {
+            if (node.parentElement.closest("script, style, .language-switch")) return;
+            const translated = translations[normalize(node.nodeValue)];
+            if (translated) node.nodeValue = node.nodeValue.replace(/\S[\s\S]*\S|\S/, translated);
+        });
+        document.title = translations[document.title] || document.title;
+        document.querySelectorAll("img[alt]").forEach((img) => {
+            img.alt = translations[normalize(img.alt)] || img.alt;
+        });
+    }
+    document.querySelectorAll("[data-language]").forEach((button) => {
+        button.setAttribute("aria-pressed", String(button.dataset.language === language));
+        button.addEventListener("click", () => {
+            const next = button.dataset.language;
+            if (next === language) return;
+            try { localStorage.setItem("portfolio-language", next); } catch (_) {}
+            const url = new URL(window.location.href);
+            url.searchParams.set("lang", next);
+            window.location.assign(url.href);
+        });
+    });
+})();
+
+</script>
 </body>
 
 </html>
