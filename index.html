@@ -10,6 +10,10 @@
 </head>
 
 <body>
+    <nav class="language-switch" aria-label="Idioma / Language">
+        <button type="button" data-language="pt-BR" lang="pt-BR" aria-label="Português do Brasil" aria-pressed="true">BR</button>
+        <button type="button" data-language="en" lang="en" aria-label="English" aria-pressed="false">EN</button>
+    </nav>
 
     <div class="container">
 
@@ -252,6 +256,25 @@
 
         </div>   
 
+        <div class="project-card">
+            <div class="project-image">
+                <img src="assets/museu-vivo.png" alt="Sala do Museu Vivo com obras de arte e cenários tridimensionais" loading="lazy">
+            </div>
+            <div class="project-content">
+                <h3>Museu Vivo — Arte e Biologia</h3>
+                <p class="project-skills">HTML • CSS • JavaScript • Three.js • Educação interativa</p>
+                <p>
+                    Jogo educativo em um museu virtual 3D, desenvolvido para uma disciplina de Biologia
+                    da UFABC. Explore salas temáticas e descubra como a representação do corpo humano
+                    se transforma ao longo da história da arte, em uma experiência que conecta arte,
+                    ciência e aprendizagem. Disponível para computador e celular.
+                </p>
+                <a href="https://jogopraticasbiologia.vercel.app/" class="project-link" target="_blank" rel="noopener noreferrer">
+                    Jogar ↗
+                </a>
+            </div>
+        </div>
+
         <button class="carousel-btn next" onclick="changeProject(1)">
             &#10095;
         </button>
@@ -263,6 +286,7 @@
         <span class="dot" onclick="currentProject(1)"></span>
         <span class="dot" onclick="currentProject(2)"></span>
         <span class="dot" onclick="currentProject(3)"></span>
+        <span class="dot" onclick="currentProject(4)"></span>
     </div>
 
     <div class="section-divider"></div>
